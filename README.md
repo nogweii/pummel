@@ -14,14 +14,14 @@ Auto-tumble your RSS feed! (Default: my (Evaryont) pinboard.in links)
     $ git clone git://github.com/evaryont/pummel.git
     $ cd pummel
     $ edit pummel.rb
-    # Edit the file to point to your choice of RSS feed)
+    # Edit the file to point to your choice of RSS feed
     $ rackup
     # Open your browser to http://localhost:9292/
 
 ## Demo (& Heroku)
 
 This web application was designed for Heroku, and is immediately compatible.
-You can see a demo (and my bookmarks!) at http://pummel-demo.heroku.com .
+You can see a demo (and my bookmarks!) at [Heroku][].
 
 ## Inspiration
 
@@ -35,7 +35,7 @@ Here it is.
 
 ## Technical Overview
 
-This is realtively geeky overview of how Pummel works, so if you want to skip it,
+This is relatively geeky overview of how Pummel works, so if you want to skip it,
 go right ahead.
 
 At application initiation, an Iconv object is created, and the RSS feed is fetched
@@ -62,8 +62,9 @@ and parse it. Then redirect the user to the index page.
 
 ## Copyright
 
-Copyright (c) 2010 Colin Shea. See LICENSE for details.
+Copyright (C) 2010 Colin Shea. See LICENSE for details.
 
 [OEmbed]: http://www.oembed.com/
 [OohEmbed]: http://oohembed.com/
 [Dumble]: http://oohembed.com/dumble/
+[Heroku]: http://pummel-demo.heroku.com
