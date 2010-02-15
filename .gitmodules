@@ -1,0 +1,3 @@
+[submodule "vendor/ruby-oembed"]
+	path = vendor/ruby-oembed
+	url = git://github.com/evaryont/ruby-oembed.git
