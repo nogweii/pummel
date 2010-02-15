@@ -1,0 +1,8 @@
+<%# Borrowed from http://rubyrss.org %>
+<h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
+<p><%= rss.channel.description %></p>
+<ol>
+<% rss.items.each do |item| %>
+    <li><%= item.title %></li>
+<% end %>
+</ol>

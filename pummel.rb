@@ -11,6 +11,9 @@ ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
 valid_string = ic.iconv(open(@@rss_url).read << ' ')[0..-2]
 @@rss = RSS::Parser.parse valid_string, false
 
+set :public, File.dirname(__FILE__) + '/public'
+set :views, File.dirname(__FILE__) + '/templates'
+
 def rss
     @@rss
 end
@@ -18,17 +21,3 @@ end
 get '/' do
     erb :index
 end
-
-use_in_file_templates!
-
-__END__
-
-@@ index
-<%# Borrowed from http://rubyrss.org %>
-<h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
-<p><%= rss.channel.description %></p>
-<ol>
-<% rss.items.each do |item| %>
-    <li><%= item.title %></li>
-<% end %>
-</ol>
