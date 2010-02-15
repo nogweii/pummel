@@ -3,6 +3,8 @@ require 'rss/1.0'
 require 'rss/2.0'
 require 'open-uri'
 require 'sinatra'
+$: << File.join(File.dirname(__FILE__), 'vendor', 'ruby-oembed', 'lib')
+require 'oembed'
 
 @@rss_url = "http://feeds.pinboard.in/rss/u:evaryont/"
 ic = Iconv.new('UTF-8//IGNORE', 'UTF-8')
@@ -24,12 +26,9 @@ __END__
 @@ index
 <%# Borrowed from http://rubyrss.org %>
 <h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
-% if rss.channel.date
-<small>Last updated on <%= rss.channel.date.strftime("%d %b %Y") %></small>
-% end
 <p><%= rss.channel.description %></p>
 <ol>
-% rss.channel.items.each do |item|
+<% rss.items.each do |item| %>
     <li><%= item.title %></li>
-%end
+<% end %>
 </ol>
