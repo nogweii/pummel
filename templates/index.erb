@@ -1,8 +1,31 @@
-<%# Borrowed from http://rubyrss.org %>
+<html><head>
+    <title>Pummel - Auto tumble your pinboard.in links!</title>
+</head><body>
 <h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
 <p><%= rss.channel.description %></p>
 <ol>
 <% rss.items.each do |item| %>
-    <li><%= item.title %></li>
+    <li>
+<% begin
+    oemb = OEmbed::Providers.get(item.link)
+    case oemb.field('type')
+    when 'photo' %>
+        <img src='<%= oemb.field("url") %>' width='<%= oemb.field("width") %>' height='<%= oemb.field("height") %>' />
+<%  when 'video' %>
+        <%= oemb.field('html') %>
+<%  when 'link'  %>
+        <a href="<%= item.link %>"><%= item.title %></a>
+<%  when 'rich'  %>
+        <%= oemb.field('html') %>
+<%  else %>
+        <a href="<%= item.link %>"><%= item.title %></a>
+<% end # case statement for the type
+rescue OEmbed::NotFound %>
+    <a href="<%= item.link %>"><%= item.title %></a>
+<% rescue OEmbed::Error => e%>
+    <pre>Error: <%= e.to_s %>!</pre><a href="<%= item.link %>"><%= item.title %></a>
+<% end %>
+    </li>
 <% end %>
 </ol>
+</body></html>
