@@ -3,6 +3,7 @@
 </head><body>
 <h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
 <p><%= rss.channel.description %></p>
+<p><a href="/refresh">Refresh</a></p>
 <ol>
 <% rss.items.each do |item| %>
     <li>
