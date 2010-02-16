@@ -1,32 +1,22 @@
 <html><head>
     <title>Pummel - Auto tumble your pinboard.in links!</title>
+    <link href="/style.css" media="screen" rel="stylesheet" type="text/css" />
 </head><body>
-<h4><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h4>
-<p><%= rss.channel.description %></p>
-<p><a href="/refresh">Refresh</a></p>
-<ol>
+<p>
+    <h2><a href="<%= rss.channel.link %>"><%= rss.channel.title %></a></h2>
+    <span><%= rss.channel.description %></span> (<a href="/refresh">refresh</a>)
+</p>
+<div id="oembed_feed">
 <% rss.items.each do |item| %>
-    <li>
-<% begin
-    oemb = OEmbed::Providers.get(item.link)
-    case oemb.field('type')
-    when 'photo' %>
-        <img src='<%= oemb.field("url") %>' width='<%= oemb.field("width") %>' height='<%= oemb.field("height") %>' />
-<%  when 'video' %>
-        <%= oemb.field('html') %>
-<%  when 'link'  %>
-        <a href="<%= item.link %>"><%= item.title %></a>
-<%  when 'rich'  %>
-        <%= oemb.field('html') %>
-<%  else %>
-        <a href="<%= item.link %>"><%= item.title %></a>
-<% end # case statement for the type
-rescue OEmbed::NotFound %>
+    <p><%
+   begin
+      oemb = OEmbed::Providers.get(item.link) %>
+      <%= generate_html(oemb) %>
+<% rescue OEmbed::NotFound %>
     <a href="<%= item.link %>"><%= item.title %></a>
-<% rescue OEmbed::Error => e%>
-    <pre>Error: <%= e.to_s %>!</pre><a href="<%= item.link %>"><%= item.title %></a>
+<% rescue OEmbed::Error => error %>
+    <a href="<%= item.link %>"><%= item.title %></a><code>Error: <%= error.to_s %></code>
 <% end %>
-    </li>
+<hr /></p>
 <% end %>
-</ol>
-</body></html>
+</div></body></html>
