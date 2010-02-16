@@ -46,5 +46,5 @@ end
 
 get '/refresh' do
     refresh_rss()
-    redirect :/
+    redirect '/'
 end
