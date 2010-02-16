@@ -1,0 +1,34 @@
+/* Body image stolen from Heroku's main page (v3) */
+/* A beautiful gradient is beautiful regardless, thank you very much Heroku! */
+body {
+    background: url("/body.png") repeat-x scroll 0 0 #212121;
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+    color: #333;
+}
+
+a {
+    color: #555;
+}
+
+hr {
+    background-color: #444;
+    width: 250px;
+    height: 1px;
+    border: 0px;
+}
+
+h2 {
+    margin-bottom: 0px;
+}
+h2 a {
+    color: #fff;
+}
+h2 + span {
+    color: #bbb;
+}
+
+#oembed_feed code {
+    display: block;
+}
