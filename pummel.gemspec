@@ -27,6 +27,7 @@ Gem::Specification.new do |s|
      "public/body.png",
      "public/favicon.ico",
      "public/style.css",
+     "pummel.gemspec",
      "pummel.rb",
      "templates/index.erb",
      "vendor/ruby-oembed/idea.rb",
