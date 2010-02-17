@@ -5,11 +5,12 @@ begin
   require 'jeweler'
   Jeweler::Tasks.new do |gem|
     gem.name = "pummel"
-    gem.summary = %Q{TODO: one-line summary of your gem}
-    gem.description = %Q{TODO: longer description of your gem}
+    gem.summary = %Q{Auto-tumble your RSS feed!}
+    gem.description = %Q{Given an RSS feed, make a tumblr-like site out of it. Uses Sinatra & Rack, inspired by Dumble.}
     gem.email = "colin@evaryont.me"
     gem.homepage = "http://github.com/evaryont/pummel"
     gem.authors = ["Colin Shea"]
+    gem.add_dependency("sinatra")
     gem.add_development_dependency "riot", ">= 0"
     gem.add_development_dependency "yard", ">= 0"
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
