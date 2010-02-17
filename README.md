@@ -18,6 +18,12 @@ Auto-tumble your RSS feed! (Default: my (Evaryont) pinboard.in links)
     $ rackup
     # Open your browser to http://localhost:9292/
 
+Really, I don't know why I did this, you still need to edit the main file, but
+I've now made it into a gem. It's hosted on gemcutter, so you need a recent
+version of RubyGems, but you can also do:
+
+    # gem install pummel
+
 ## Demo (& Heroku)
 
 This web application was designed for Heroku, and is immediately compatible.
