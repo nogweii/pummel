@@ -4,7 +4,6 @@ require 'faraday'
 require 'faraday-http-cache'
 require 'slim'
 require 'onebox'
-require 'pp'
 require 'feedjira'
 
 set :slim, pretty: true

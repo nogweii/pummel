@@ -1,0 +1,67 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    activesupport (4.1.0)
+      i18n (~> 0.6, >= 0.6.9)
+      json (~> 1.7, >= 1.7.7)
+      minitest (~> 5.1)
+      thread_safe (~> 0.1)
+      tzinfo (~> 1.1)
+    curb (0.8.5)
+    faraday (0.9.0)
+      multipart-post (>= 1.2, < 3)
+    faraday-http-cache (0.3.0)
+      activesupport (>= 3.0)
+      faraday (~> 0.8)
+      multi_json (~> 1.3)
+    feedjira (1.2.0)
+      curb (~> 0.8.1)
+      loofah (~> 1.2.1)
+      sax-machine (~> 0.2.1)
+    hexpress (1.2.0)
+    i18n (0.6.9)
+    json (1.8.1)
+    loofah (1.2.1)
+      nokogiri (>= 1.4.4)
+    mini_portile (0.5.3)
+    minitest (5.3.2)
+    moneta (0.7.20)
+    multi_json (1.9.2)
+    multipart-post (2.0.0)
+    mustache (0.99.5)
+    nokogiri (1.6.1)
+      mini_portile (~> 0.5.0)
+    onebox (1.3.2)
+      hexpress (~> 1.2)
+      moneta (~> 0.7)
+      multi_json (~> 1.7)
+      mustache (~> 0.99)
+      nokogiri (~> 1.6.1)
+    rack (1.5.2)
+    rack-protection (1.5.3)
+      rack
+    sax-machine (0.2.1)
+      nokogiri (~> 1.6.0)
+    sinatra (1.4.5)
+      rack (~> 1.4)
+      rack-protection (~> 1.4)
+      tilt (~> 1.3, >= 1.3.4)
+    slim (2.0.2)
+      temple (~> 0.6.6)
+      tilt (>= 1.3.3, < 2.1)
+    temple (0.6.7)
+    thread_safe (0.3.3)
+    tilt (1.4.1)
+    tzinfo (1.1.0)
+      thread_safe (~> 0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  faraday
+  faraday-http-cache
+  feedjira
+  onebox
+  sinatra
+  slim
