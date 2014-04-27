@@ -1,0 +1,11 @@
+h1 New world
+p This is the new world man.
+
+input type='input' id='username'
+a href='' id='userlink' Display user
+javascript:
+  window.addEventListener('load', function() {
+    document.getElementById('username').addEventListener('input', function() {
+      document.getElementById('userlink').href = "/"+this.value;
+    }, false);
+  }, false);

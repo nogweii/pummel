@@ -1,0 +1,18 @@
+h3 User: #{@user}
+a href="#{@rss_url}" Link to RSS feed
+
+pre
+  code #{@result.pretty_inspect}
+
+h3 RSS feed source
+pre
+  code #{@result.body}
+
+h3 Feedjira results
+pre
+  code #{@rss.pretty_inspect}
+
+- for entry in @rss.entries
+  h4 Entry called '#{entry.title}'
+  pre
+    code #{entry.pretty_inspect}

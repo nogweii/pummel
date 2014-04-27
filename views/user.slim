@@ -1,0 +1,11 @@
+- for entry in @rss.entries
+  div.entry
+    - if Onebox.has_matcher?(entry.url)
+      - begin
+        == Onebox.preview(entry.url).to_s
+      - rescue NameError # Onebox & Youtube error, fallback to normal display
+        a.bookmark href="#{entry.url}" = entry.title
+        .description = entry.summary
+    - else
+      a.bookmark href="#{entry.url}" = entry.title
+      .description = entry.summary
